@@ -37,7 +37,8 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
-          secretKey: ${{secrets.SECRET_KEY}}
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+        env:
+          secretKey: ${{secrets.SECRET_KEY}}
