@@ -39,8 +39,8 @@ jobs:
         git config --global user.email github-actions[bot]@users.noreply.github.com
         git config --global user.name github-actions[bot]
         git add --all
-        git commit -m "Automatic Change"
-        git push origin -f
+        echo "One $(git commit -m "Automatic Change)"
+        echo "two $(git push origin -f)"
   deploy:
     needs: build
     environment:
