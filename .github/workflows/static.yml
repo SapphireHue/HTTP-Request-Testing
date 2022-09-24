@@ -41,6 +41,8 @@ jobs:
           "hello!!"
     - name: commit
       uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_user_name: SapphireHue
 
   deploy:
     needs: build
