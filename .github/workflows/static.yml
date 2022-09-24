@@ -39,6 +39,8 @@ jobs:
         run: curl -X POST --data "idk=helloworld&somethingimportant=${{secrets.SECRET_KEY}}"  "https://httpbin.org/post"
       - name: Checkout
         uses: actions/checkout@v3
+      - name: New page
+        run: echo "Hello!! > file1.txt
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
