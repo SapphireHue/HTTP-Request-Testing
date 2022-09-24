@@ -43,6 +43,7 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_user_name: SapphireHue
+        commit_user_email: saffron.lu.liu@gmail.com
 
   deploy:
     needs: build
