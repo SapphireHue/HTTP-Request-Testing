@@ -33,14 +33,11 @@ jobs:
       with:
         token: ${{secrets.GITHUB_TOKEN}}
     - name: Overwrite file
-      uses: "DamianReeves/write-file-action@master"
-      with:
-        path: file1.txt
-        write-mode: overwrite
-        contents: |
-          "hello!!"
+      run: echo "hello world!" > file1.txt
     - name: commit
       run: | 
+        git config --global user.email github-actions[bot]@users.noreply.github.com
+        git config --global user.name github-actions[bot]
         git add --all
         git commit -m "Automatic Change"
         git push origin -f
