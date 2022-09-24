@@ -38,12 +38,7 @@ jobs:
         contents: |
           "hello!!"
     - name: Git commit and push
-      run: |
-            git config --global user.name SapphireHue
-            git config --global user.email saffron.lu.liu@gmail.com
-            git add -A
-            git commit -m Testing
-            git push
+      uses: EndBug/add-and-commit@v9
 
   deploy:
     needs: build
