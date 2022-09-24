@@ -40,11 +40,10 @@ jobs:
         contents: |
           "hello!!"
     - name: commit
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_user_name: SapphireHue
-        commit_user_email: saffron.lu.liu@gmail.com
-
+      run: | 
+        git add --all
+        git commit -m "Automatic Change"
+        git push origin -f
   deploy:
     needs: build
     environment:
