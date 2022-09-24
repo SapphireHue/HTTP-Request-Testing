@@ -37,13 +37,12 @@ jobs:
         write-mode: overwrite
         contents: |
           "hello!!"
-    - name: Commit & Push
-      uses: Andro999b/push@v1.3
+    - name: Update resources
+      uses: test-room-7/action-update-file@v1
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: main
-        force: true
-        message: 'Overwritten by Github Actions - ${date}'        
+          file-path: file1.txt
+          commit-msg: Update resources
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: build
