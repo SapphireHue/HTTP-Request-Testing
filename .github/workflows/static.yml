@@ -33,13 +33,13 @@ jobs:
       with:
         token: ${{secrets.GITHUB_TOKEN}}
     - name: Overwrite file
-      run: echo "hello world!" > file1.txt
+      run: echo "hello world! 4:10" > file1.txt
     - name: commit
       run: | 
         git config --global user.email github-actions[bot]@users.noreply.github.com
         git config --global user.name github-actions[bot]
         git add --all
-        echo "One $(git commit -m Automatic Change)"
+        echo "One $(git commit -m 'Automatic Change')"
         echo "two $(git push origin -f)"
   deploy:
     needs: build
