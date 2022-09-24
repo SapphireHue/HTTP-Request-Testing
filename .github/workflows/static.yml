@@ -37,8 +37,13 @@ jobs:
         write-mode: overwrite
         contents: |
           "hello!!"
-    - name: Git commit and push
-      uses: EndBug/add-and-commit@v9
+    - name: Commit & Push
+      uses: Andro999b/push@v1.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
+        force: true
+        message: 'Overwritten by Github Actions - ${date}'
 
   deploy:
     needs: build
